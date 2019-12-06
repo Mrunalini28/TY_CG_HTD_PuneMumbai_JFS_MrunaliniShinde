@@ -1,0 +1,6 @@
+create table Hotel_Bill(Item_Code int primary key,Food_Name varchar(50),Price Double)
+ insert into Hotel_Bill values (02,'Idali',45.0)
+ insert into Hotel_Bill values (03,'Pav-Bhaji',60.0)
+ insert into Hotel_Bill values (04,'Non-veg Thali',200.0)
+ insert into Hotel_Bill values (05,'Vda-Pav',25.0)
+ insert into Hotel_Bill values (06,'Chat',50.0)
