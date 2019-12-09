@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<import resource="departmentConfig.xml"></import>
+	
+	<bean id="employee" class="com.capgemini.springcore.beans.EmployeeBean" autowire="constructor">
+	<constructor-arg name="empId" value="111"/>
+	<constructor-arg name="empName" value="Mrunalini"/>
+	<!-- <constructor-arg name="deptBean" ref="Dev"/> -->
+	</bean>
+	
+	<!-- <bean id="Dev" class="com.capgemini.springcore.beans.DepartmentBean" primary="true">
+	<property name="deptId" value="9011"/>
+	<property name="deptName" value="Development"/>
+	</bean>
+	
+	<bean id="Test" class="com.capgemini.springcore.beans.DepartmentBean">
+	<property name="deptId" value="9012"/>
+	<property name="deptName" value="Testing"/>
+	</bean> -->
+	
+</beans>

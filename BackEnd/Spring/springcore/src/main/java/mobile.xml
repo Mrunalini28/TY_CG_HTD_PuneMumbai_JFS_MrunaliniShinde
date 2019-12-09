@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+     <!-- by-ref -->
+     
+    <!--  <bean id="mobile" class="com.capgemini.springcore.beans.Mobile"> -->
+	
+	<!-- <property name="brandName" value="iphone"></property>
+	<property name="modelName" value="11+"/>
+	<property name="price" value="500000"/>
+	<property name="mobileDisplay" ref="dis"/>
+	</bean>
+	
+	<bean id="dis" class="com.capgemini.springcore.beans.MobileDisplay">
+	<property name="displaySize" value="6.5"/>
+	<property name="resolution" value="214"/>
+	</bean> -->
+	
+	 <!-- byType -->
+	  
+	<!-- <bean id="mobile" class="com.capgemini.springcore.beans.Mobile" autowire="byType">
+	
+	<property name="brandName" value="iphone"></property>
+	<property name="modelName" value="11+"/>
+	<property name="price" value="500000"/>
+	</bean>
+	
+	<bean id="dis" class="com.capgemini.springcore.beans.MobileDisplay">
+	<property name="displaySize" value="6.5"/>
+	<property name="resolution" value="214"/>
+	</bean> -->
+	
+	 <!-- byName -->
+	
+	<bean id="mobile" class="com.capgemini.springcore.beans.Mobile" autowire="byName">
+	
+	<property name="brandName" value="iphone"></property>
+	<property name="modelName" value="11+"/>
+	<property name="price" value="500000"/>
+	</bean>
+	
+	<bean id="mobileDisplay" class="com.capgemini.springcore.beans.MobileDisplay">
+	<property name="displaySize" value="6.5"/>
+	<property name="resolution" value="214"/>
+	</bean>
+</beans>
