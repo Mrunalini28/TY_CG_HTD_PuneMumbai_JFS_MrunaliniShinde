@@ -1,0 +1,53 @@
+<div class="login col-md-4 offset-md-4 mt-5">
+    <h5>{{message}}</h5>
+    <div class="tile ">
+        <div class="tile-header">
+            <h2
+                style="color: white; opacity: .75; font-size: 4rem; display: flex; justify-content: center; align-items: center; height: 100%;">
+                Login</h2>
+        </div>
+
+        <div class="tile-body">
+            <form class="form-group" #loginform='ngForm' (ngSubmit)='form(loginform)'>
+                <label class="form-input">
+                    <i class="material-icons">person</i>
+                    <input type="email" name="email" required pattern="[^@]*@[a-zA-Z]+(.com)" #email='ngModel'
+                        ngModel />
+                    <div class="label">Email</div>
+                    <div class="underline"></div>
+                    <div *ngIf='email.touched && email.invalid'>
+                        <p class="alert text-danger" *ngIf='email.errors.required'>
+                            *This field is mandatory
+                        </p>
+                        <p class="alert text-danger" *ngIf='email.errors.pattern'>
+                            *Enter valid email
+                        </p>
+                    </div>
+                </label>
+
+                <label class="form-input">
+                    <i class="material-icons">lock</i>
+                    <input type="password" name="password" #password='ngModel' ngModel minlength="8" required/>
+                    <span class="label">Password</span>
+                    <div class="underline"></div>
+                    <div *ngIf='password.touched && password.invalid'>
+                        <p class="alert text-danger" *ngIf='password.errors.required'>
+                            *This field is mandatory
+                        </p>
+                        <p class="alert text-danger" *ngIf='password.errors.pattern'>
+                            *Password should proper
+                        </p>
+                        <p class="alert text-danger" *ngIf='password.errors.minlength'>
+                            *Minimum length should be 8
+                        </p>
+
+                    </div>
+                </label>
+
+                <div class="submit-container clearfix" style="margin-top: 2rem;">
+                    <button class="btn btn-primary float-right" type="submit" [disabled]='loginform.invalid'>Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

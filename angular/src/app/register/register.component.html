@@ -1,0 +1,99 @@
+<div class=" mt-4">
+    <div>
+        <div class="wrapper wrapper--w780">
+
+            
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration</h2>
+                    <form class="form-group" #registerform='ngForm' (ngSubmit)='register(registerform)'>
+                        <label class="form-input">
+                            <div class="label">Email:</div>
+                            <input type="email" name="email" style="height: 40px;" required
+                                pattern="[^@]*@[a-zA-Z]+(.com)" #email='ngModel' ngModel />
+
+
+                            <div *ngIf='email.touched && email.invalid'>
+                                <p class="alert text-danger" *ngIf='email.errors.required'>
+                                    *This field is mandatory
+                                </p>
+                                <p class="alert text-danger" *ngIf='email.errors.pattern'>
+                                    *Enter valid email
+                                </p>
+                            </div>
+                        </label>
+
+                        <label class="form-input">
+                            <div class="label">Password:</div>
+                            <input type="password" name="password" style="height: 40px;" #password='ngModel' ngModel
+                                minlength="8" required />
+
+                            <div *ngIf='password.touched && password.invalid'>
+                                <p class="alert text-danger" *ngIf='password.errors.required'>
+                                    *This field is mandatory
+                                </p>
+                                <p class="alert text-danger" *ngIf='password.errors.pattern'>
+                                    *Password should proper
+                                </p>
+                                <p class="alert text-danger" *ngIf='password.errors.minlength'>
+                                    *Minimum length should be 8
+                                </p>
+
+                            </div>
+                        </label>
+                        <label class="form-input">
+                            <div class="label">Phone Number:</div>
+                            <input type="text" name="phonenumber" style="height: 40px;" #phonenumber='ngModel' ngModel
+                                required />
+
+                            <div *ngIf='phonenumber.touched && phonenumber.invalid'>
+                                <p class="alert text-danger" *ngIf='phonenumber.errors.required'>
+                                    *This field is mandatory
+                                </p>
+
+                            </div>
+                        </label>
+                        <label class="form-input">
+                            <div class="label">Address:</div>
+                            <input type="text" name="address" style="height: 40px;" #address='ngModel' ngModel
+                                required />
+
+                            <div *ngIf='address.touched && address.invalid'>
+                                <p class="alert text-danger" *ngIf='address.errors.required'>
+                                    *This field is mandatory
+                                </p>
+
+                            </div>
+
+                        </label>
+                        <div class="form-input">
+                            <label for="nationality">
+                                <p>Nationality:</p>
+                            </label>
+                            <select name="nationality" required #nationality='ngModel' ngModel>
+                                <option value='Indian'>Indian</option>
+                                <option value='American'>American</option>
+                                <option value='Japanese'>Japanese</option>
+                                <option value='French'>French</option>
+                                <option value='Sweden'>Sweden</option>
+                            </select>
+                            <div *ngIf='nationality.touched && nationality.invalid'>
+                                <p class="alert text-danger" *ngIf='nationality.errors.required'>
+                                    *This field is mandatory
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="submit" style="margin-top: 2rem;">
+                            <button class="btn btn-primary float-right" type="submit"
+                                [disabled]='registerform.invalid'>Register</button>
+                            <button class="btn btn-primary float-left" type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
